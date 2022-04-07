@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title>
+    Verificar Gráficos
+  </title>  
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;800;900&display=swap" rel="stylesheet">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">google.charts.load('current', {packages: ['charteditor']});</script>
+    <script src="papaparse.min.js"></script>
+    <script type="text/javascript" src="verificador.js"></script>
+</head>
+<body>
+
+    <div class="boxFlex" id="boxTotal">
+
+        <div class="boxFlex sidenav" id="mySidenav">
+            <div class="boxFlex boxBotaoMenu">
+                <span class="closebtn" id="fechar" onclick="closeNav()"><i class="material-icons-round">close</i></span>
+                <span id="abrir" onclick="openNav()"><i class="material-icons-round">menu</i></span>
+            </div>
+            <div class="boxFlex" id="logo"><a href="Interface.html"><img src="img/icon_simplechart.png" alt="Logo Simples Chart" id="logoSimpleChart"></a></div>
+            <div class="boxFlex" id="menuPrincipal">
+                <button class="buttonMenu" id= "buttonHome" type="button"><i class="material-icons-round">assessment</i>Crie Gráficos</button>
+                <button class="buttonMenu" type="button"><i class="material-icons-round">find_in_page</i>Guia de Diretrizes</button>
+                <button class="buttonMenu" type="button"><i class="material-icons-round">info</i>Sobre</button>
+                <button class="buttonMenu" type="button"><i class="material-icons-round">question_answer</i>Fale Conosco</button>
+            </div>
+            <div class="boxFlex" id="creditos">
+                <img src="img/imgMenu.png" alt="Imagem Menu" id="imgMenu">
+                <br> Desenvolvido por Rodrigo Oliveira | <br> Todos os direitos reservados © 2021 <br>
+            </div>
+        </div>
+
+        <div class="boxFlex" id="boxCentralGrafico">
+            
+            <div class="boxFlex" id="boxSeletorArquivo">
+                <div class="boxFlex" id='input-wrapper'>
+                    <label id="iconSeletorArquivo" for='inputFileSeletor'>
+                      <i class="material-icons-round">insert_drive_file</i>
+                    </label>
+                    <input id='inputFileSeletor' type='file' accept=".csv"/>
+                    <span class="boxFlex" id='file-name'>Selecione um arquivo</span>
+                </div>
+            </div>
+            <div class="boxFlex" id="boxGrafico">
+                <div class="boxFlex" id="boxEditar">
+                    <button id="buttonEditar" type="button" onclick="google.charts.setOnLoadCallback(loadEditor)"><i class="material-icons-round">brush</i></button>
+                </div>
+                <div id="vizChart">
+                    <label class="boxFlex" id="boxInputFileChart" for="inputFileChart"><img src="img/imgInicioSeletorArquivo.png" alt="Imagem para Seleção de Arquivo" id="imgSeletorFileChart"></label>
+                </div>
+                <input id='inputFileChart' type='file' accept=".csv"/>
+            </div>
+        </div>
+
+        <div class="boxFlex" id="boxLateralDiretrizes">
+
+            <h2>Alterações</h2>
+
+            <div class="boxFlex" id="boxDiretrizes">
+                <label class="boxFlex" id="inicioBoxDiretrizes"><img src="img/imgInicioBoxDiretrizes.png" alt="Imagem Inicial sobre as Diretrizes" id="imgInicioBoxDiretrizes"></label>
+            </div>
+        </div>
+
+        <div class="boxFlex" id="boxFinalIndicadores">
+
+            <h2>Análise</h2>
+
+            <div class="boxFlex" id="quadroFinalIndicadores">
+
+                <div class="boxFlex" id="boxAnaliseGeral">
+
+                    <div class="boxFlex" id="quadroGeral">
+                        <h4 id="notaGeral">Nota Geral do Gráfico</h4>
+                        <div class="boxFlex" id="valorNota">0%</div>
+                        <div class="boxFlex" id="quadroStars">
+                            <div><i class="material-icons-round iconStar" id="star1">star_border</i></div>
+                            <div><i class="material-icons-round iconStar" id="star2">star_border</i></div>
+                            <div><i class="material-icons-round iconStar" id="star3">star_border</i></div>
+                            <div><i class="material-icons-round iconStar" id="star4">star_border</i></div>
+                            <div><i class="material-icons-round iconStar" id="star5">star_border</i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="boxFlex boxIndicadoresLateral">
+                    <div class="boxFlex quadroIndicador">
+                        <div class="boxFlex boxIconIndicador" id="boxIconApresentacao">
+                            <i class="iconIndicador material-icons-round" id="iconApresentacao">monitor</i>
+                        </div>
+                        <div class="boxFlex boxNomeProgressoIndicador">
+                            <p class="textoIndicador" id="textoApresentacao">Apresentação</p>
+                            <div class="barraProgresso" id="bordaApresentacao">
+                                <div class="valorProgresso" id="barraApresentacao"></div>
+                            </div>
+                        </div>
+                        <div class="boxFlex boxValorIndicador">
+                            <p class="valorIndicador" id="valorApresentacao">0%</p>
+                        </div>
+                    </div>
+
+                    <div class="boxFlex quadroIndicador">
+                        <div class="boxFlex boxIconIndicador" id="boxIconDesign">
+                            <i class="iconIndicador material-icons-round" id="iconDesign">imagesearch_roller</i>
+                        </div>
+                        <div class="boxFlex boxNomeProgressoIndicador">
+                            <p class="textoIndicador" id="textoDesign">Design</p>
+                            <div class="barraProgresso" id="bordaDesign">
+                                <div class="valorProgresso" id="barraDesign"></div>
+                            </div>
+                        </div>
+                        <div class="boxFlex boxValorIndicador">
+                            <p class="valorIndicador" id="valorDesign">0%</p>
+                        </div>
+                    </div>
+
+                    <div class="boxFlex quadroIndicador">
+                        <div class="boxFlex boxIconIndicador" id="boxIconCanal">
+                            <i class="iconIndicador material-icons-round" id="iconCanal">auto_graph</i>
+                        </div>
+                        <div class="boxFlex boxNomeProgressoIndicador">
+                            <p class="textoIndicador" id="textoCanal">Canal Visual</p>
+                            <div class="barraProgresso" id="bordaCanal">
+                                <div class="valorProgresso" id="barraCanal"></div>
+                            </div>
+                        </div>
+                        <div class="boxFlex boxValorIndicador">
+                            <p class="valorIndicador" id="valorCanal">0%</p>
+                        </div>
+                    </div>
+
+                    <div class="boxFlex quadroIndicador">
+                        <div class="boxFlex boxIconIndicador" id="boxIconMarcas">
+                            <i class="iconIndicador material-icons-round" id="iconMarcas">bubble_chart</i>
+                        </div>
+                        <div class="boxFlex boxNomeProgressoIndicador">
+                            <p class="textoIndicador" id="textoMarcas">Marcas</p>
+                            <div class="barraProgresso" id="bordaMarcas">
+                                <div class="valorProgresso" id="barraMarcas"></div>
+                            </div>
+                        </div>
+                        <div class="boxFlex boxValorIndicador">
+                            <p class="valorIndicador" id="valorMarcas">0%</p>
+                        </div>
+                    </div>
+
+                    <div class="boxFlex quadroIndicador">
+                        <div class="boxFlex boxIconIndicador" id="boxIconCor">
+                            <i class="iconIndicador material-icons-round" id="iconCor">color_lens</i>
+                        </div>
+                        <div class="boxFlex boxNomeProgressoIndicador">
+                            <p class="textoIndicador" id="textoCor">Cor</p>
+                            <div class="barraProgresso" id="bordaCor">
+                                <div class="valorProgresso" id="barraCor"></div>
+                            </div>
+                        </div>
+                        <div class="boxFlex boxValorIndicador">
+                            <p class="valorIndicador" id="valorCor">0%</p>
+                        </div>
+                    </div>
+
+                    <div class="boxFlex quadroIndicador">
+                        <div class="boxFlex boxIconIndicador" id="boxIconEixos">
+                            <i class="iconIndicador material-icons-round" id="iconEixos">border_style</i>
+                        </div>
+                        <div class="boxFlex boxNomeProgressoIndicador">
+                            <p class="textoIndicador" id="textoEixos">Eixos</p>
+                            <div class="barraProgresso" id="bordaEixos">
+                                <div class="valorProgresso" id="barraEixos"></div>
+                            </div>
+                        </div>
+                        <div class="boxFlex boxValorIndicador">
+                            <p class="valorIndicador" id="valorEixos">0%</p>
+                        </div>
+                    </div>
+
+                    <div class="boxFlex quadroIndicador">
+                        <div class="boxFlex boxIconIndicador" id="boxIconLegenda">
+                            <i class="iconIndicador material-icons-round" id="iconLegenda">short_text</i>
+                        </div>
+                        <div class="boxFlex boxNomeProgressoIndicador">
+                            <p class="textoIndicador" id="textoLegenda">Legenda</p>
+                            <div class="barraProgresso" id="bordaLegenda">
+                                <div class="valorProgresso" id="barraLegenda"></div>
+                            </div>
+                        </div>
+                        <div class="boxFlex boxValorIndicador">
+                            <p class="valorIndicador" id="valorLegenda">0%</p>
+                        </div>
+                    </div>
+
+                    <div class="boxFlex quadroIndicador">
+                        <div class="boxFlex boxIconIndicador" id="boxIconEspecifico">
+                            <i class="iconIndicador material-icons-round" id="iconEspecifico">pie_chart</i>
+                        </div>
+                        <div class="boxFlex boxNomeProgressoIndicador">
+                            <p class="textoIndicador" id="textoEspecifico">Específico</p>
+                            <div class="barraProgresso" id="bordaEspecifico">
+                                <div class="valorProgresso" id="barraEspecifico"></div>
+                            </div>
+                        </div>
+                        <div class="boxFlex boxValorIndicador">
+                            <p class="valorIndicador" id="valorEspecifico">0%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

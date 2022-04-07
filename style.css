@@ -1,0 +1,506 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+h2{
+    color: rgb(56, 56, 56);
+    font-size: 16pt;
+    font-weight: 900;
+    margin: 5px 0px 5px 0px;
+}
+.boxFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 10px;
+    overflow: auto;
+  }
+
+.boxFlex::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+.boxFlex::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: #F4F4F4;
+}
+.boxFlex::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+#boxTotal{
+    flex-direction: row;
+    background-color: #E9F3FF;
+    height: 95vh;
+    margin-left: 80px;
+}
+
+#boxCentralGrafico{
+    background-color: #E9F3FF;
+    width: 50%;
+    overflow: hidden;
+}
+
+#boxLateralDiretrizes{
+    background-color: #E9F3FF;
+    width: 35%;
+}
+
+#boxFinalIndicadores{
+    width: 15%;
+    overflow: hidden;
+}
+
+#quadroFinalIndicadores{
+    background-color: white;
+    height: 100%;
+    overflow: hidden;
+}
+
+#boxSeletorArquivo{
+    flex-direction: row;
+    align-items: center;
+    background-color: #E9F3FF;
+    min-width: 100%;
+    overflow: hidden;
+}
+
+#boxGrafico{
+    background-color:white;
+    height: 85%;
+}
+
+#boxDiretrizes{
+    background-color:white;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#inicioBoxDiretrizes{
+    align-items: center;
+    justify-content: flex-end;
+    width: 90%;
+    height: 95%;
+}
+
+#imgInicioBoxDiretrizes{
+    width: 90%;
+    margin-bottom: 5%;
+}
+
+input[type='file'] {
+    display: none
+}
+
+#input-wrapper{
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+  
+#iconSeletorArquivo {
+    background-color: white;
+    border-radius: 10px;
+    color: #0F67EA;
+    margin: 5px;
+    padding: 20px 5px 15px 15px;
+}
+  
+#iconSeletorArquivo:hover {
+    background-color: #0F67EA;
+    color: #E9F3FF;
+}
+
+#boxNomeArquivo{
+    height: 40px;
+    min-width: 87%;
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+#file-name{
+    font-family: 'Montserrat', sans-serif;
+    color: #0F67EA;
+    font-size: 16pt;
+    font-weight: 600;
+    justify-content: center;
+    background-color: white;
+    height: 50px;
+    min-width: 85%;
+    overflow-y: hidden;
+}
+
+#logo{
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    overflow: hidden;
+}
+
+#logoSimpleChart{
+    height: 80%;
+    padding-top: 5px;
+}
+
+#menuPrincipal{
+    height: 30%;
+    justify-content: flex-start;
+    overflow: visible;
+}
+
+#buttonHome{
+    background-color: #004393;
+    border-radius: 10px;
+}
+
+#creditos{
+    justify-content: center;
+    text-align: center;
+    color: white;
+    height: 50%;
+    font-size: 8pt;
+    font-weight: 300;
+    display: none;
+}
+
+button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    display: flex;
+    align-items:center;
+    margin: 10px 0px 10px 0px;
+    padding: 5px;
+}
+i{
+    margin-right: 10px;
+}
+
+/* MENU RETRATIL*/
+
+.sidenav {
+    height: 100%;
+    width: 65px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.2s;
+    justify-content: flex-start;
+    border-radius: 0px 10px 0px 10px;
+}
+  
+.sidenav .buttonMenu {
+    color: white;
+    font-weight: 400;
+    padding: 10px;
+    transition: 0.1s;
+    color: white;
+    background-color: #0F67EA;
+    border-radius: 10px;
+}
+
+.buttonMenu{
+    height: 50px;
+    margin-top: 0px;
+}
+  
+.buttonMenu:hover {
+    color: white;
+    background-color: #3E96ED;
+}
+
+.boxBotaoMenu{
+    font-size:30px;
+    cursor:pointer;
+    align-items: flex-end;
+    color: rgb(56, 56, 56);
+}
+
+#fechar{
+    display: none;
+    overflow: hidden;
+}
+  
+#vizChart{
+    height: 85%;
+}
+
+#boxInputFileChart{
+    height: 95%;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+#imgSeletorFileChart{
+    width: 80%;
+}
+
+#boxEditar{
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 10%;
+}
+
+#buttonEditar{
+    background-color: #2983EF;
+    border-radius: 10px;
+    color: white;
+    margin: 5px;
+    padding: 15px 5px 15px 15px;
+}
+
+#buttonEditar:hover {
+    color: #2983EF;
+    background-color: white;
+    border: solid 2px;
+    border-color: #2983EF;
+    margin: 3px;
+}
+
+.quadroDiretriz{
+    background-color:white;
+    width: 90%;
+    margin-top: 15px;
+    -webkit-box-shadow: 4px 4px 15px 0px rgba(211, 211, 211, 0.75);
+    -moz-box-shadow:    4px 4px 15px 0px rgba(211, 211, 211, 0.75);
+    box-shadow:         4px 4px 15px 0px rgba(211, 211, 211, 0.75);
+    overflow: visible;
+}
+
+.boxExpansaoDiretriz{
+    min-height: 80%;
+    overflow: auto;
+    margin: 0px;
+    display: none;
+}
+
+.boxTituloDiretriz{
+    background-color: #8FD6F9;
+    flex-direction: row;
+    color: rgb(56, 56, 56);
+    margin: 0px;
+    align-items: center;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.textoTituloDiretriz{
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+.buttonTipoDiretriz{
+    width: 10%;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 0px 5px 5px;
+    border-radius: 6px;
+    overflow: visible;
+}
+
+.tituloDiretriz{
+    width: 80%;
+    padding: 2px;
+    margin-left: 10px;
+}
+
+.buttonHelpDiretriz{
+    width: 5%;
+    margin: 10px;
+}
+
+.boxDescricaoDiretriz{
+    min-height: 10%;
+}
+
+.descricaoDiretriz{
+    font-size: 10pt;
+}
+
+.boxExemploDiretriz{
+    min-height: 25%;
+    align-items: center;
+}
+
+.imgExemploDiretriz{
+    width: 100%;
+}
+
+.boxSugestaoDiretriz{
+    color: rgb(56, 56, 56);
+    min-height: 20%;
+    justify-content: flex-start;
+}
+
+h4{
+    font-size: 10pt;
+    font-weight: 400;
+    margin: 1px;
+}
+
+.sugestaoDiretriz{
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+    padding: 2px;
+    margin: 1px;
+}
+
+.iconSugestaoDiretriz{
+    margin-right: 20px;
+    width: 5%;
+    font-size: 25pt;
+}
+
+.textoSugestaoDiretriz{
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+.boxIndicadoresLateral{
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+    height: 70%;
+    overflow: visible;;
+}
+
+.quadroIndicador{
+    flex-direction: row;
+    height: 10%;
+    width: 95%;
+    margin: 0%;
+    overflow: visible;
+}
+
+.boxIconIndicador{
+    background-color: rgb(211, 211, 211);
+    font-size: 4pt;
+    width: 20%;
+    height: 70%;
+    margin: 0px;
+    padding: 5px 0px 0px 0px;
+    border-radius: 6px;
+    overflow: visible;
+    align-items: center;
+}
+
+.iconIndicador{
+    color: rgb(155, 155, 155);
+    margin: 0px;
+    padding: 0px;
+}
+
+.boxNomeProgressoIndicador{
+    color: rgb(211, 211, 211);
+    font-size: 9pt;
+    font-weight: 600;
+    justify-content: flex-start;
+    width: 45%;
+    margin: 0px;
+    overflow: visible;
+}
+
+.barraProgresso{
+    width: 100%;
+    margin-top: 3px;
+    height: 10px;
+    border: solid rgb(155, 155, 155);
+    border-radius: 10px;
+}
+
+.valorProgresso{
+    background-color: rgb(155, 155, 155);
+    border-radius: 10px;
+    width: 0%;
+    height: 100%;
+}
+
+.textoIndicador{
+    margin: 0px;
+    color: rgb(155, 155, 155);
+}
+
+.boxValorIndicador{
+    color: rgb(155, 155, 155);
+    width: 23%;
+    margin: 0px;
+    padding: 5px 0px 0px 0px;
+    border-radius: 6px;
+    overflow: visible;
+}
+
+.valorIndicador{
+    font-size: 12pt;
+    font-weight: 900;
+    padding-bottom: 5px;
+}
+
+#boxAnaliseGeral{
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+    height: 30%;
+    color:  rgb(155, 155, 155);
+    overflow: visible;
+}
+
+#quadroGeral{
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    width: 85%;
+    overflow: visible;
+    overflow: visible;
+}
+
+#valorNota{
+    font-size: 5vh;
+    font-weight: 900;
+    height: 50%;
+    width: 100%;
+    align-items: baseline;
+    align-items: center;
+    overflow: visible;
+}
+
+#quadroStars{
+    flex-direction: row;
+    height: 30%;
+    width: 90%;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    -webkit-box-shadow: 4px 4px 15px 0px rgba(211, 211, 211, 0.75);
+    -moz-box-shadow:    4px 4px 15px 0px rgba(211, 211, 211, 0.75);
+    box-shadow:         4px 4px 15px 0px rgba(211, 211, 211, 0.75);
+    overflow: visible;
+}
+
+.iconStar{
+    margin: 0%;
+    padding: 0%;
+    color: rgb(155, 155, 155);;
+}
+
+.indicadorAvaliado{
+    color: #2983EF;
+}
+
+

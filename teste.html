@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title>
+    Verificar Gráficos
+  </title>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">google.charts.load('current', {packages: ['charteditor']});</script>
+  <script src="http://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+  <script src="jquery.csv.js"></script>
+  <script src="helpers.js"></script>
+  <script src="papaparse.min.js"></script>
+  <script src="verificador.js"></script>
+</head>
+<body>
+  <div id="vis_div" style="border-style: solid; border-color:black; height: 500px; width: 600px;"></div>
+  <p id=texto></p>
+
+  <button type="button" onclick="google.charts.setOnLoadCallback(loadEditor)">Criar</button>
+
+  <h2>selecione o local do arquivo CSV:</h2>
+  <input type="file" id="files"/>
+  <!-- <h2>Result</h2>
+  <textarea id="result" style="height: 250px;"></textarea> -->
+
+</body>
+</html>
